@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "pillk:item/sarmat",
-		"particle": "pillk:item/sarmat"
+		"0": "age:item/sarmat",
+		"particle": "age:item/sarmat"
 	},
 	"elements": [
 		{
