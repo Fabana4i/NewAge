@@ -1,6 +1,7 @@
 package net.Pillk.NewAge;
 
 import com.mojang.logging.LogUtils;
+import net.Pillk.NewAge.init.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -21,10 +22,12 @@ public class NewAge
 
     public NewAge()
     {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(eventBus);
         
-        modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(this::addCreative);
+        eventBus.addListener(this::commonSetup);
+        eventBus.addListener(this::addCreative);
         
         MinecraftForge.EVENT_BUS.register(this);
     }
